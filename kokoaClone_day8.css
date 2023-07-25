@@ -1,0 +1,188 @@
+:root {
+  --background-color: #6bbcbe;
+  --element-color: white;
+  --default-font-family: 'Times New Roman', Times, serif;
+}
+
+@keyframes rainbow {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
+
+@keyframes circleLeft {
+  0% {
+    transform: rotate(0deg) translateX(60px);
+  }
+
+  50% {
+    transform: rotate(180deg) translateX(60px);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(60px);
+  }
+}
+
+@keyframes circleRight {
+  0% {
+    transform: rotate(0deg) translateX(-60px);
+  }
+
+  50% {
+    transform: rotate(180deg) translateX(-60px);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(-60px);
+  }
+}
+
+@keyframes barWave {
+  0%,
+  100% {
+    transform: scaleY(1);
+    animation-delay: 0.5s;
+  }
+
+  25%,
+  75% {
+    transform: scaleY(1.5);
+    animation-delay: 0.5s;
+  }
+
+  50% {
+    transtransform: scaleY(1.75);
+    animation-delay: 0.5s;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  position: relative;
+  top: -75px;
+  font-size: 20px;
+  font-family: var(--default-font-family);
+  animation: rainbow 5s linear infinite alternate;
+}
+
+.title::first-letter {
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
+.title:hover {
+  animation-play-state: paused;
+}
+
+.circle-container {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--element-color);
+  position: relative;
+  top: 10px;
+}
+
+.circle--left {
+  animation: circleLeft 3s ease-in-out infinite;
+}
+
+.circle--right {
+  animation: circleRight 3s ease-in-out infinite;
+}
+
+.bar-container {
+  display: flex;
+  width: 100px;
+  height: 150px;
+  justify-content: space-evenly;
+}
+
+.bar {
+  width: 15px;
+  height: 70px;
+  background-color: var(--element-color);
+}
+
+.bar--1 {
+  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+  animation-delay: 0.2s;
+}
+
+.bar--2 {
+  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+  animation-delay: 0.4s;
+}
+
+.bar--3 {
+  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+  animation-delay: 0.6s;
+}
+
+.bar--4 {
+  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+  animation-delay: 0.8s;
+}
+
+.bar--5 {
+  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+  animation-delay: 1s;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
