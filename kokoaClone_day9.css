@@ -1,0 +1,156 @@
+:root {
+  --background-color: #6bbcbe;
+  --customized-border: 10px solid var(--background-color);
+  --button-border: 3px solid rgba(0, 0, 0, 0.8);
+  --album-cover-border: 3px solid black;
+  --default-font-family: 'Times New Roman', Times, serif;
+}
+
+html {
+  height: 150vh;
+  border: var(--customized-border);
+  font-family: var(--default-font-family);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  border-bottom: 5px solid black;
+}
+
+.container {
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+}
+
+.playlist {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: var(--default-font-family);
+}
+
+.playing-music {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.playing-music__album-cover img {
+  width: 125px;
+  height: 125px;
+  border-radius: 10%;
+}
+
+.playing-music__song-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.playing-music__song-name > a {
+  font-weight: bolder;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.playing-music__artist > a {
+  font-weight: bolder;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.controller {
+  display: flex;
+  justify-content: space-around;
+}
+
+.controller__play-btn,
+.controller__like-btn,
+.controller__add-btn {
+  padding: 10px;
+  border-radius: 20%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+}
+
+.recommended {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recommended__song {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.recommended__song__album-cover {
+  border: var(--album-cover-border);
+  padding: 3px;
+  border-radius: 20%;
+}
+
+.recommended__song__album-cover img {
+  width: 100px;
+  height: auto;
+  border-radius: 20%;
+}
+
+.recommended__song-name {
+  font-weight: bolder;
+  font-size: 30px;
+  text-align: end;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.recommended__artist {
+  font-weight: bolder;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: end;
+}
+
+.recommended__song-name > a {
+  font-weight: bolder;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.recommended__artist > a {
+  font-weight: bolder;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.album-cover--background-skyblue {
+  background: skyblue;
+  width: 100px;
+  height: 100px;
+  border: var(--album-cover-border);
+  border-radius: 20%;
+}
+
+.album-cover--background-turquoise {
+  background: turquoise;
+  width: 100px;
+  height: 100px;
+  border: var(--album-cover-border);
+  border-radius: 20%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--background-color);
+}

@@ -44,6 +44,46 @@
   }
 }
 
+@keyframes rainbowBackground {
+  100%,
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  8% {
+    background-color: rgb(255, 127, 0);
+  }
+  16% {
+    background-color: rgb(255, 255, 0);
+  }
+  25% {
+    background-color: rgb(127, 255, 0);
+  }
+  33% {
+    background-color: rgb(0, 255, 0);
+  }
+  41% {
+    background-color: rgb(0, 255, 127);
+  }
+  50% {
+    background-color: rgb(0, 255, 255);
+  }
+  58% {
+    background-color: rgb(0, 127, 255);
+  }
+  66% {
+    background-color: rgb(0, 0, 255);
+  }
+  75% {
+    background-color: rgb(127, 0, 255);
+  }
+  83% {
+    background-color: rgb(255, 0, 255);
+  }
+  91% {
+    background-color: rgb(255, 0, 127);
+  }
+}
+
 @keyframes circleLeft {
   0% {
     transform: rotate(0deg) translateX(60px);
@@ -72,6 +112,24 @@
   }
 }
 
+@keyframes circleAnimation {
+  50% {
+    transform: rotate(0.5turn);
+  }
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+@keyframes circleAnimationReverse {
+  50% {
+    transform: rotate(-0.5turn);
+  }
+  100% {
+    transform: rotate(-0.5turn);
+  }
+}
+
 @keyframes barWave {
   0%,
   100% {
@@ -91,9 +149,12 @@
   }
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   background-color: var(--background-color);
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,8 +162,6 @@ body {
 }
 
 .title {
-  position: relative;
-  top: -75px;
   font-size: 20px;
   font-family: var(--default-font-family);
   animation: rainbow 5s linear infinite alternate;
@@ -117,12 +176,24 @@ body {
   animation-play-state: paused;
 }
 
+.circle-container,
+.bar-container {
+  width: 100px;
+  margin-top: 50px;
+}
+
 .circle-container {
   display: flex;
-  width: 100px;
-  height: 100px;
   justify-content: space-around;
-  align-items: flex-start;
+  animation: circleAnimation 1.5s ease-in-out infinite;
+  margin-bottom: 50px;
+}
+
+.circle-container:hover {
+  animation: circleAnimationReverse 1.5s ease-in-out infinite;
+}
+.circle-container:hover .circle {
+  animation: rainbowBackground 1.5s ease-in-out infinite alternate;
 }
 
 .circle {
@@ -130,54 +201,34 @@ body {
   height: 10px;
   border-radius: 50%;
   background-color: var(--element-color);
-  position: relative;
-  top: 10px;
-}
-
-.circle--left {
-  animation: circleLeft 3s ease-in-out infinite;
-}
-
-.circle--right {
-  animation: circleRight 3s ease-in-out infinite;
 }
 
 .bar-container {
   display: flex;
-  width: 100px;
-  height: 150px;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .bar {
   width: 15px;
-  height: 70px;
+  height: 100px;
   background-color: var(--element-color);
+  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
 }
 
-.bar--1 {
-  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+.bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.bar:nth-child(3) {
   animation-delay: 0.2s;
 }
 
-.bar--2 {
-  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
+.bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.bar:nth-child(5) {
   animation-delay: 0.4s;
-}
-
-.bar--3 {
-  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
-  animation-delay: 0.6s;
-}
-
-.bar--4 {
-  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
-  animation-delay: 0.8s;
-}
-
-.bar--5 {
-  animation: barWave 1s cubic-bezier(0.6, 0.05, 0.43, 0.99) infinite alternate;
-  animation-delay: 1s;
 }
 
 footer {
