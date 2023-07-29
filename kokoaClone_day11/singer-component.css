@@ -1,0 +1,41 @@
+/* singer component*/
+.singer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .singer-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: auto;
+    box-shadow: 3px 10px 10px var(--blur-black);
+    border-radius: 50%;
+  }
+  
+  .singer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+  }
+  
+  .singer-info div {
+    margin: 5px 0px;
+  }
+  
+  .singer-info__name span {
+    font-size: 20px;
+    font-weight: 1000;
+  }
+  
+  .singer-info__name--blur span {
+    color: var(--blur-black);
+  }
+  
+  .singer-info__gerne span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blur-black);
+  }

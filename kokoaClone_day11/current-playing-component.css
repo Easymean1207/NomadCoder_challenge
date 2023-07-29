@@ -1,0 +1,24 @@
+/* current-playing container */
+.current-playing {
+  display: flex;
+  justify-content: center;
+}
+
+.current-playing__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.current-playing__songs__info a {
+  text-decoration: none;
+}
+
+.current-playing__controller i {
+  margin-right: 10px;
+}

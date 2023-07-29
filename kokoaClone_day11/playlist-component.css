@@ -1,0 +1,39 @@
+/*play-list container*/
+.play-list {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+}
+
+.play-list__songs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0px;
+  border: var(--default-boder);
+  border-color: black;
+  border-radius: 20px;
+}
+
+.play-list__songs__img img {
+  width: 75px;
+  object-fit: auto;
+  border-radius: 20px;
+}
+
+.play-list__songs__info {
+  margin: 0px 80px;
+}
+
+.play-list__songs__info__album-song span {
+  font-weight: 1000;
+}
+
+.play-list__songs__info__song-name--white--size16px {
+  color: white;
+  font-size: 16px;
+}

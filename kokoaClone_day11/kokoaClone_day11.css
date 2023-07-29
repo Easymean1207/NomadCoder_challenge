@@ -1,0 +1,18 @@
+@import 'setting.css';
+@import 'status-bar.css';
+@import 'singer-component.css';
+@import 'user-interaction-component.css';
+@import 'playlist-component.css';
+@import 'current-playing-component.css';
+@import 'footer.css';
+
+html {
+  font-family: var(--default-font-family);
+  background-color: whitesmoke;
+  height: 130vh;
+}
+
+/* applied to all container */
+.container {
+  margin: 50px 30px;
+}
